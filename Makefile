@@ -33,6 +33,7 @@ clean:
 .PHONY:	install
 install: rtd
 	$Q echo "[Install]"
+	$Q mkdir -p $(DESTDIR)$(PREFIX)/bin
 	$Q cp rtd		$(DESTDIR)$(PREFIX)/bin
 ifneq ($(WIRINGPI_SUID),0)
 	$Q chown root.root	$(DESTDIR)$(PREFIX)/bin/rtd
