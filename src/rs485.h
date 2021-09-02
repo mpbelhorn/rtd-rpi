@@ -13,8 +13,8 @@ typedef struct
 		unsigned int add:8;
 	} ModbusSetingsType;
 
-const CliCmdType CMD_RS485_READ;
-const CliCmdType CMD_RS485_WRITE;
+extern const CliCmdType CMD_RS485_READ;
+extern const CliCmdType CMD_RS485_WRITE;
 
 
 #endif //__RS485_H__
