@@ -36,8 +36,7 @@ install: rtd
 	$Q mkdir -p $(DESTDIR)$(PREFIX)/bin
 	$Q cp rtd		$(DESTDIR)$(PREFIX)/bin
 ifneq ($(WIRINGPI_SUID),0)
-	$Q chown root.root	$(DESTDIR)$(PREFIX)/bin/rtd
-	$Q chmod 4755		$(DESTDIR)$(PREFIX)/bin/rtd
+	@if [ "$(shell id -u)" = 0 ]; then chown root.root $(DESTDIR)$(PREFIX)/bin/rtd; chmod 4755 $(DESTDIR)$(PREFIX)/bin/rtd; fi
 endif
 #	$Q mkdir -p		$(DESTDIR)$(PREFIX)/man/man1
 #	$Q cp megaio.1		$(DESTDIR)$(PREFIX)/man/man1
